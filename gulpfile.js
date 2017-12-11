@@ -24,7 +24,7 @@ gulp.task('styles', (done) => {
     }))
     .pipe(rename({extname: '.min.css'}))
     .pipe(sourcemaps.write('.'))
-    .pipe(gulp.dest('./dist'))
+    .pipe(gulp.dest('./build'))
     .on('end', done)
 })
 
@@ -41,7 +41,7 @@ gulp.task('scripts', () => {
     .pipe(concat('main.min.js'))
     .pipe(uglify())
     .pipe(sourcemaps.write('.'))
-    .pipe(gulp.dest('./dist'))
+    .pipe(gulp.dest('./build'))
 })
 
 

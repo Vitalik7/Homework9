@@ -1,1 +1,1 @@
-alert('I love you my Alincdcka dd  ))')
+alert('Hello world')

@@ -47,5 +47,5 @@ gulp.task('scripts', () => {
 
 gulp.task('watch', ['default'], () => {
   gulp.watch(['./src/styles/**/*.scss'], ['styles'])
-  gulp.watch(['.src/scripts/**/*.js'], ['scripts'])
+  gulp.watch(['./src/scripts/**/*.js'], ['scripts'])
 })

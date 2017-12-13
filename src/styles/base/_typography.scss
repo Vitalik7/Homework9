@@ -1,0 +1,51 @@
+body { font-family: 'Open Sans', sans-serif; }
+
+h2, h3 {
+  font-weight: 400;
+  padding: 10px 0 20px;
+  text-transform: uppercase;
+}
+
+.entry-heading {
+
+  a {
+    transition: 400ms;
+
+    &:hover {
+      color: $color-green;
+    }
+  }
+
+}
+
+
+p {
+  font-weight: 300;
+  padding-bottom: 20px;
+  text-align: justify;
+  color: $color-grey;
+}
+
+.more-btn,
+.back-btn {
+  color: $color-green;
+  padding-bottom: 20px;
+  text-transform: uppercase;
+  transition: 400ms;
+
+  &:hover {
+    color: $color-green-light;
+  }
+}
+
+.deleted {
+  float: right;
+  margin-top: -5%;  
+  cursor: pointer;
+  color: $color-red;
+  font-size: 40px;
+}
+
+footer {
+  p { font-weight: 700; }
+}

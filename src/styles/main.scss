@@ -1,9 +1,91 @@
-@import './abstracts/variables';
+h1, h2, h3 { margin: 0; }
 
-@import './base/base';
-@import './base/typography';
+header {
+  width: 100%;
+  height: 150px;
+  background: #26a69a;
+  color: #fff;
+}
 
-@import './layout/header';
-@import './layout/footer';
+h2#header {
+  position: relative;
+  width: 30%;
+  top: 34%;
+  left: 5%;
+}
 
-@import './pages/home';
+#add-article-toggle {
+  margin: 5%;
+}
+
+.general-form {
+  display: none;
+  margin: 10px 0;
+  padding: 10px;
+  border: 1px solid #ccc;
+}
+
+.general-input {
+  display: block;
+  margin: 5px 0;
+}
+
+#add-article-form {
+  width: 50%;
+  margin-left: 25%;
+  @extend .general-form;
+
+  input, textarea {
+    @extend .general-input;
+  }
+  textarea {
+    height: 100px;
+  }
+}
+
+#edit-article-form {
+  @extend .general-form;
+  background: #fff;
+
+  input, textarea {
+    @extend .general-input;
+  }
+}
+
+#edit-modal {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+#short-articles {
+
+  &>div {
+    padding: 10px;
+    margin-top: 10px;
+    border: 1px solid #ccc;
+  }
+}
+
+input#edit-article-title {
+  position: relative;
+  margin-bottom: 5%;
+  margin-top: 18%;
+}
+
+.delete-btn, .edit-btn{
+  float: right;
+  margin-top: -1%;
+  background: transparent;
+  color: black;
+  border: none;
+}
+
+form h3 {
+  position: fixed;
+}
+
+#close-edit {
+  float: right;
+}

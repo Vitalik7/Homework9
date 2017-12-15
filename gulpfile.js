@@ -10,6 +10,7 @@ const source = require('vinyl-source-stream')
 const buffer = require('vinyl-buffer')
 const plumber = require('gulp-plumber')
 const uglify = require('gulp-uglify')
+const cleanCSS = require('gulp-clean-css');
 
 gulp.task('default', ['styles', 'scripts'])
 
@@ -24,6 +25,7 @@ gulp.task('styles', (done) => {
     }))
     .pipe(rename({extname: '.min.css'}))
     .pipe(sourcemaps.write('.'))
+    .pipe(cleanCSS({compatibility: 'ie8'}))
     .pipe(gulp.dest('./build'))
     .on('end', done)
 })

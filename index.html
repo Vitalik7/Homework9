@@ -1,86 +1,44 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Homework 9</title>
-    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400" rel="stylesheet">
+    <title>jQuery Blog</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css">
+    <link rel="stylesheet" href="https://code.getmdl.io/1.3.0/material.indigo-pink.min.css">
     <link rel="stylesheet" href="./build/main.min.css">
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
   </head>
   <body>
     <header>
-      <div class="container">
-        <h1>jQuery Articles</h1>
-      </div><!-- .container -->
+      <h2 id="header">Posts in blog</h2>
     </header>
 
-    <main role="main">
-      <section class="short-entries">
-          <div class="flex-container">
-            <div class="single-entry">
-              <img src="./assets/design.jpg" alt="Design image">
-              <h3 class="entry-heading"><a href="#" data-target="article-1">Minimum usable design</a></h3>
-              <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.</p>
-              <a class="more-btn" href="#" data-target="article-1">Read more &rarr;</a>
-              <span class="deleted">&#215;</span>
-            </div><!-- .single-entry -->
+    <button class="btn waves-effect waves-light" type="submit" name="action" id="add-article-toggle">Add article</button>
 
-            <div class="single-entry">
-              <img src="./assets/system.jpg" alt="System image">
-              <h3 class="entry-heading"><a href="#" data-target="article-2">A beautifuly complex system</a></h3>
-              <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.</p>
-              <a class="more-btn" href="#" data-target="article-2">Read more &rarr;</a>
-              <span class="deleted">&#215;</span>
-            </div><!-- .single-entry -->
+    <form id="add-article-form">
+      <input type="text" id="add-article-title" placeholder="Title">
+      <textarea name="content" id="add-article-content" cols="30" rows="10s" placeholder="Content"></textarea>
+      <button class="waves-effect waves-light btn" id="add-article-publish">Publish</button>
+    </form>
 
-            <div class="single-entry">
-              <img src="./assets/easier.jpg" alt="Easier image">
-              <h3 class="entry-heading"><a href="#" data-target="article-3">Easier is better than better</a></h3>
-              <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.</p>
-              <a class="more-btn" href="#" data-target="article-3">Read more &rarr;</a>
-              <span class="deleted">&#215;</span>
-            </div><!-- .single-entry -->
-          </div><!-- .container -->
-        </section><!-- .short-entries -->
+    <div id="edit-modal">
+      <form id="edit-article-form">
+        <h3>Edit post</h3>
+        <a href="#" id="close-edit"><i class="material-icons">clear</i></a>
+        <input type="hidden" id="edit-article-id">
+        <input type="text" id="edit-article-title" placeholder="Title">
+        <textarea name="content" id="edit-article-content" cols="30" rows="10s" placeholder="Content"></textarea>
+        <button class="btn waves-effect waves-light" id="edit-article-publish">Edit</button>
+      </form>
+    </div>
 
-        <article id="article-1" class="clearfix">
-          <div class="container">
-            <h2>Minimum usable design</h2>
-            <img src="./assets/design.jpg" alt="Design image">
-            <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.</p>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Enim, in? Veniam reprehenderit amet, autem quos corrupti accusamus nesciunt est vitae, fugiat rerum, alias nulla perferendis magni qui suscipit expedita molestiae?</p>
-            <a class="back-btn" href="#" data-target="article-1">&larr; Back to articles</a>
-          </div><!-- .container -->
-        </article><!-- #article-1 -->
+    <div id="short-articles">
 
-        <article id="article-2" class="clearfix">
-          <div class="container">
-            <h2>A beautifuly complex system</h2>
-            <img src="./assets/system.jpg" alt="System image">
-            <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.</p>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Enim, in? Veniam reprehenderit amet, autem quos corrupti accusamus nesciunt est vitae, fugiat rerum, alias nulla perferendis magni qui suscipit expedita molestiae?</p>
-            <a class="back-btn" href="#" data-target="article-1">&larr; Back to articles</a>
-          </div><!-- .container -->
-        </article><!-- #article-2 -->
+    </div>
 
-        <article id="article-3" class="clearfix">
-          <div class="container">
-            <h2>Easier is better than better</h2>
-            <img src="./assets/easier.jpg" alt="Easier image">
-            <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.</p>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Enim, in? Veniam reprehenderit amet, autem quos corrupti accusamus nesciunt est vitae, fugiat rerum, alias nulla perferendis magni qui suscipit expedita molestiae?</p>
-            <a class="back-btn" href="#" data-target="article-1">&larr; Back to articles</a>
-          </div><!-- .container -->
-        </article><!-- #article-3 -->
-    </main>
-
-    <footer>
-      <div class="container">
-        <p>&copy; 2017 Vitaliy Lavrenko & Vladyslav Kondratiev</p>
-      </div>
-    </footer>
-
-    <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
     <script src="./build/main.min.js"></script>
   </body>
 </html>

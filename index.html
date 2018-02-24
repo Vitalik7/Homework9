@@ -20,6 +20,7 @@
 
     <form id="add-article-form">
       <input type="text" id="add-article-title" placeholder="Title">
+      <input type="text" placeholder="Image URL" id="add-article-url" name="url"/>
       <textarea name="content" id="add-article-content" cols="30" rows="10s" placeholder="Content"></textarea>
       <button class="waves-effect waves-light btn" id="add-article-publish">Publish</button>
     </form>
@@ -30,6 +31,7 @@
         <a href="#" id="close-edit"><i class="material-icons">clear</i></a>
         <input type="hidden" id="edit-article-id">
         <input type="text" id="edit-article-title" placeholder="Title">
+        <input type="text" placeholder="Image URL" id="edit-article-url"  name="url"/>
         <textarea name="content" id="edit-article-content" cols="30" rows="10s" placeholder="Content"></textarea>
         <button class="btn waves-effect waves-light" id="edit-article-publish">Edit</button>
       </form>

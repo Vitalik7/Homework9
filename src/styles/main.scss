@@ -75,7 +75,7 @@ input#edit-article-title {
 }
 
 .delete-btn, .edit-btn{
-  float: right;
+
   margin-top: -1%;
   background: transparent;
   color: black;
@@ -88,4 +88,19 @@ form h3 {
 
 #close-edit {
   float: right;
+}
+
+div {
+  text-align: center;
+}
+div h3, p {
+  margin-bottom: 2%;
+  text-align: center;
+}
+
+
+img {
+  width: 500px;
+  height: 300px;
+  text-align: center;
 }

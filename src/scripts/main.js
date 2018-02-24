@@ -85,9 +85,7 @@ function editArticle() {
     $('#edit-article-title').val(curTitle)
     $('#edit-article-url').val(curUrl)
     $('#edit-article-content').val(curContent)
-
   })
-
 }
 
 // START OF MAIN CODE
@@ -103,7 +101,13 @@ $('#add-article-toggle').click(function(e) {
 // Adding article
 $('#add-article-form').submit(function(e) {
   e.preventDefault()
+  var title = $('#add-article-title').val()
+  var url = $('#add-article-url').val()
+  var content = $('#add-article-content').val()
 
+if(title.length >= 0
+  && url.length > 0
+  && content.length > 0 ) {
   var article = {
     id: Math.random().toString(36).substr(2, 9),
     title: $('#add-article-title').val(),
@@ -119,6 +123,9 @@ $('#add-article-form').submit(function(e) {
   $('#add-article-content').val('')
 
   renderArticle(article.id, article.title, article.url , article.content)
+} else{
+  alert('Need fill up forms')
+}
 })
 
 // Editing article
